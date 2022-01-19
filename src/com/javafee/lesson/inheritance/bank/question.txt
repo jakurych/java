@@ -1,0 +1,4 @@
+Create the PremiumAccount -
+it should be similar to the BaseAccount except:
+- the check process should not be executed
+- the getName should return "PremiumAccount"
