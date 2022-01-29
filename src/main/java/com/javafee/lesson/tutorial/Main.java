@@ -1,3 +1,5 @@
+package com.javafee.lesson.tutorial;
+
 import java.util.Scanner;
 
 public class Main {

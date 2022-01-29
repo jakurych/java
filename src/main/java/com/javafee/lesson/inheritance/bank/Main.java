@@ -1,4 +1,4 @@
-package src.com.javafee.lesson.inheritance.bank;
+package com.javafee.lesson.inheritance.bank;
 
 public class Main {
 

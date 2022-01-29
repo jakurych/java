@@ -1,4 +1,4 @@
-package src.com.javafee.lesson.inheritance;
+package com.javafee.lesson.inheritance;
 
 public class A extends B{
     public A() {
