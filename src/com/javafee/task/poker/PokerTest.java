@@ -1,4 +1,4 @@
-package com.javafee.poker;
+package src.com.javafee.task.poker;
 
 public class PokerTest {
     //this class must remain unchanged

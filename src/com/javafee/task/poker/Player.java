@@ -1,4 +1,4 @@
-package com.javafee.poker;// add your own banner here
+package src.com.javafee.task.poker;// add your own banner here
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Player {
 		// create a player here
 		int startTokens = ThreadLocalRandom.current().nextInt(10, 50);
 		bankroll += startTokens;
-		System.out.println("com.javafee.poker.Player tokens: " + startTokens);
+		System.out.println("src.com.javafee.task.poker.Player tokens: " + startTokens);
 		hand = new ArrayList<>(5);
 		// zasilenie banku tokenow nowymi tokenami
 	}

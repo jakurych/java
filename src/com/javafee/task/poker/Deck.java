@@ -1,4 +1,4 @@
-package com.javafee.poker;// add your own banner here
+package src.com.javafee.task.poker;// add your own banner here
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;

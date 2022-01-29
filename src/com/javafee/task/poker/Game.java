@@ -1,4 +1,4 @@
-package com.javafee.poker;// add your own banner here
+package src.com.javafee.task.poker;// add your own banner here
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +28,7 @@ public class Game {
 
     public Game() {
         // This no-argument constructor is to actually play a normal game
-        //TODO: inicjalizacja pol (com.javafee.poker.Deck i com.javafee.poker.Player)
+        //TODO: inicjalizacja pol (src.com.javafee.task.poker.Deck i src.com.javafee.task.poker.Player)
         this.cards = new Deck();
         this.p = new Player();
     }

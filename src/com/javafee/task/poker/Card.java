@@ -1,4 +1,4 @@
-package com.javafee.poker;// add your own banner here
+package src.com.javafee.task.poker;// add your own banner here
 
 public class Card implements Comparable<Card> {
 	private int suit; // use integers 1-4 to encode the suit
@@ -22,7 +22,7 @@ public class Card implements Comparable<Card> {
 	//@Override
 	/*public String toString() {
 		
-		return "com.javafee.poker.Card{" +
+		return "src.com.javafee.task.poker.Card{" +
 				"suit=" + suit +
 				", rank=" + rank +
 				'}';

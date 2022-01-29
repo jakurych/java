@@ -1,4 +1,4 @@
-package com.javafee.poker;
+package src.com.javafee.task.poker;
 
 import java.util.Comparator;
 
