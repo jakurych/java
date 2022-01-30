@@ -1,33 +1,37 @@
 package com.javafee.task.bankaccount;
 
+import java.util.Scanner;
+
 public class main {
 
-
-
     public static void main(String[] args) {
+
         BankAccount client = new BankAccount();
         BankAccountPremium clientPremium = new BankAccountPremium();
 
-        client.setBalance(100);
-        client.withdraw(10);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Is premium account? Type 0 or 1");
+        int isPremium = scanner.nextInt();
+        if (isPremium == 1) {
+            System.out.println("Premium account");
+            client = clientPremium;
+        }
+        System.out.println("Set balance: ");
+        client.setBalance(scanner.nextDouble());
+        System.out.println("Balance: " + client.getBalance());
+        System.out.println("Input withdraw: (example: 10% or 10)");
+        String withdrawAmount = scanner.next();
+        if (withdrawAmount.endsWith("%")) {
+            System.out.println("Percentage value: " + withdrawAmount);
+            StringBuffer sb = new StringBuffer(withdrawAmount);
+            sb.deleteCharAt(sb.length() - 1);
+            client.withdraw(Integer.parseInt(String.valueOf(sb)));
 
-        clientPremium.setBalance(100);
-        clientPremium.withdraw(10);
+        } else {
+            client.withdraw(Integer.parseInt(withdrawAmount));
+        }
 
         System.out.println(client.getBalance());
-        System.out.println(clientPremium.getBalance());
-
-        client.transfer(10);
-        clientPremium.transfer(10);
-
-        System.out.println(client.getBalance());
-        System.out.println(clientPremium.getBalance());
-
-        client.withdraw(10);
-        clientPremium.withdraw(10);
-
-        System.out.println(client.getBalance());
-        System.out.println(clientPremium.getBalance());
 
     }
 

@@ -1,8 +1,6 @@
 package com.javafee.task.bankaccount;
 
-
 public class BankAccount {
-
 
     private double balance;
 
@@ -15,18 +13,24 @@ public class BankAccount {
     }
 
     void withdraw(double withdraw_anmount) {
-        balance -= withdraw_anmount;
-
+        if (withdraw_anmount > balance) {
+            System.err.println("Not enough money!");
+            System.exit(11);
+        } else {
+            balance -= withdraw_anmount;
+        }
     }
 
     void withdraw(int percentage) {
-        double percent = Double.parseDouble(String.valueOf(percentage)) / 100.0;
-        double amount = balance * percent;
-        this.withdraw(amount);
+        if (percentage > 100) {
+            System.err.println("More than 100%!");
+            System.exit(0);
+        }
+
+        this.withdraw(balance * (Double.parseDouble(String.valueOf(percentage)) / 100.0));
     }
 
     void transfer(double amount) {
         balance += amount;
-
     }
 }
