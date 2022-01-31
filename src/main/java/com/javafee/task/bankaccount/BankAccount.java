@@ -12,19 +12,18 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    void withdraw(double withdraw_anmount) {
+    void withdraw(double withdraw_anmount) throws BankException {
         if (withdraw_anmount > balance) {
-            System.err.println("Not enough money!");
-            System.exit(11);
+            throw new BankException("Not enough money!");
         } else {
             balance -= withdraw_anmount;
         }
     }
 
-    void withdraw(int percentage) {
+    void withdraw(int percentage) throws BankException {
         if (percentage > 100) {
-            System.err.println("More than 100%!");
-            System.exit(0);
+
+            throw new BankException("More than 100%!");
         }
 
         this.withdraw(balance * (Double.parseDouble(String.valueOf(percentage)) / 100.0));

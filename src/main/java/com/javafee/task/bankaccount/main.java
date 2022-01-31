@@ -21,14 +21,17 @@ public class main {
         System.out.println("Balance: " + client.getBalance());
         System.out.println("Input withdraw: (example: 10% or 10)");
         String withdrawAmount = scanner.next();
-        if (withdrawAmount.endsWith("%")) {
-            System.out.println("Percentage value: " + withdrawAmount);
-            StringBuffer sb = new StringBuffer(withdrawAmount);
-            sb.deleteCharAt(sb.length() - 1);
-            client.withdraw(Integer.parseInt(String.valueOf(sb)));
+        try {
+            if (withdrawAmount.endsWith("%")) {
+                System.out.println("Percentage value: " + withdrawAmount);
+                StringBuffer sb = new StringBuffer(withdrawAmount);
+                sb.deleteCharAt(sb.length() - 1);
+                client.withdraw(Integer.parseInt(String.valueOf(sb)));
 
-        } else {
-            client.withdraw(Integer.parseInt(withdrawAmount));
+            } else
+                client.withdraw(Double.parseDouble(withdrawAmount));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
 
         System.out.println(client.getBalance());
