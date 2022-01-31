@@ -12,7 +12,7 @@ public class Main {
 
         String exceptionString = "Exception1 String argument";
         try{
-            Exception exception1 = new Exception();
+            throw new Exception();
         }catch (Exception e){
             System.out.println(exceptionString);
         }
