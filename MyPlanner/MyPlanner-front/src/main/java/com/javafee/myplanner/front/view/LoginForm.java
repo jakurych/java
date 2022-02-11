@@ -5,14 +5,15 @@ import lombok.Getter;
 import javax.swing.*;
 
 @Getter
-public class MainForm {
+public class LoginForm {
     private JFrame frame;
     private JPanel panel;
-    private JButton btnTest;
-    private JLabel lblInfo;
+    private JPasswordField passwordField;
+    private JTextField textFieldLogin;
+    private JButton btnLogin;
 
-    public MainForm() {
-        frame = new JFrame("MyPlanner v0.1");
+    public LoginForm() {
+        frame = new JFrame("LoginForm");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

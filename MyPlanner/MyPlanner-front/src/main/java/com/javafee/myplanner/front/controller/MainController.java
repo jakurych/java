@@ -1,12 +1,10 @@
 package com.javafee.myplanner.front.controller;
-import com.javafee.myplanner.front.service.MainFormService;
+import com.javafee.myplanner.front.service.MainService;
 import com.javafee.myplanner.front.view.MainForm;
 
-import java.util.Random;
-
-public class MainFormController {
+public class MainController {
     private MainForm mainForm;
-    private MainFormService mainFormService;
+    private MainService mainFormService;
 
     public void control() {
         initialize();
@@ -16,7 +14,7 @@ public class MainFormController {
 
     private void initialize() {
         mainForm = new MainForm();
-        mainFormService = new MainFormService();
+        mainFormService = new MainService();
         mainForm.getFrame().setVisible(true);
     }
 

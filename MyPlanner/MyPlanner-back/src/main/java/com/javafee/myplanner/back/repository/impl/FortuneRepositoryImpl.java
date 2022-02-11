@@ -1,6 +1,7 @@
-package com.javafee.myplanner.back.repository;
+package com.javafee.myplanner.back.repository.impl;
 
 import com.javafee.myplanner.back.domain.Fortune;
+import com.javafee.myplanner.back.repository.FortuneRepository;
 
 import java.util.ArrayList;
 import java.util.List;
