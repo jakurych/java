@@ -1,7 +1,6 @@
 package com.javafee.myplanner.front;
 
 import com.javafee.myplanner.front.controller.LoginController;
-import com.javafee.myplanner.front.controller.MainController;
 import lombok.extern.java.Log;
 
 import javax.swing.*;

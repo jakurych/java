@@ -1,21 +1,19 @@
 package com.javafee.myplanner.front.service;
 
-import com.javafee.myplanner.back.domain.Fortune;
-import com.javafee.myplanner.back.repository.FortuneRepository;
-import com.javafee.myplanner.back.repository.impl.FortuneRepositoryImpl;
-
-import java.util.List;
-import java.util.Random;
+import com.javafee.myplanner.back.service.FortuneService;
+import com.javafee.myplanner.back.service.impl.FortuneServiceImpl;
 
 public class MainService {
-    private FortuneRepository fortuneRepository;
+    private FortuneService fortuneService;
 
     public MainService() {
-        fortuneRepository = new FortuneRepositoryImpl();
+        fortuneService = new FortuneServiceImpl();
     }
 
     public String getFortune() {
-        List<Fortune> fortunes = fortuneRepository.findAll();
-        return fortunes.get(new Random().nextInt(fortunes.size())).getName();
+        return fortuneService.getRandomFortune();
     }
+
+
+
 }

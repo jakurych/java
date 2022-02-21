@@ -11,6 +11,8 @@ public class LoginForm {
     private JPasswordField passwordField;
     private JTextField textFieldLogin;
     private JButton btnLogin;
+    private JLabel lblLoginError;
+    private JButton btnRegister;
 
     public LoginForm() {
         frame = new JFrame("LoginForm");
