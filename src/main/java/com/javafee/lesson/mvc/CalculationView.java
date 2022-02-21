@@ -46,30 +46,22 @@ public class CalculationView extends JFrame implements ActionListener{
             @Override
             public void actionPerformed(ActionEvent e) { //when someone click the button this will execute
 
+                System.out.println("sout");
                 firstNumberJTF.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         Double firstNumber = Double.valueOf(Integer.valueOf(firstNumberJTF.getText()));
-
                     }
                 });
                 secendNumberJTF.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         Double secendNumber = Double.valueOf(Integer.valueOf(secendNumberJTF.getText()));
-
                     }
                 });
-
-
-
             }
         });
-
-
     }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
