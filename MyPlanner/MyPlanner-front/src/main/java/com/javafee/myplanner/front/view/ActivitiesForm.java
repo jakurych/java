@@ -1,18 +1,17 @@
 package com.javafee.myplanner.front.view;
-import lombok.Getter;
-
+import lombok.*;
 import javax.swing.*;
-
 @Getter
-    public class MainForm{
+@Setter
+public class ActivitiesForm {
     private JFrame frame;
+    private JButton btnAddNewActivity;
     private JPanel panel;
-    private JButton btnTest;
-    private JLabel lblInfo;
-    private JButton btnAddEvent;
+    private JLabel lblName;
+    private JLabel lblActivities;
 
-    public MainForm(){
-        frame = new JFrame("MainForm");
+    public ActivitiesForm(){
+        frame = new JFrame("ActivitiesForm");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

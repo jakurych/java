@@ -11,7 +11,7 @@ import java.util.Optional;
 @Getter
 public class UserRepositoryImpl implements UserRepository {
     private static List<User> usersDb = new ArrayList<>(List.of(User.builder().login("admin").password("admin123").build(),
-            User.builder().login("test").password("test123").build()));
+            User.builder().login("test").password("test123").build(),User.builder().login("123").password("123").build()));
 
 
 
