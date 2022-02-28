@@ -3,7 +3,7 @@ package com.javafee.task.poker;// add your own banner here
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Deck {
+public class  Deck {
 
     final static int NUMBERS_OF_SIUTS = 4;
     final static int NUMBERS_OF_VALUE = 13;
