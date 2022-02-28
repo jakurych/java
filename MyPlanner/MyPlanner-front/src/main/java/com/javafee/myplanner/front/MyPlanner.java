@@ -7,7 +7,7 @@ import javax.swing.*;
 
 @Log
 public class MyPlanner {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //run!
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             new LoginController().control();
