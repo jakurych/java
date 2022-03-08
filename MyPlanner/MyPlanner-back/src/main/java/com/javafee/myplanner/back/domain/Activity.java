@@ -1,7 +1,10 @@
 package com.javafee.myplanner.back.domain;
 
+import lombok.Builder;
+import lombok.Getter;
+
+import java.time.Duration;
 import java.util.Date;
-import lombok.*;
 
 @Builder
 @Getter
@@ -9,6 +12,7 @@ public class Activity {
     private String name;
     private Date dateFrom;
     private Date dateTo;
-    private int color;
+    private String color;
+    private ActivityType activityType;
 
 }

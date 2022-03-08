@@ -12,8 +12,6 @@ public class AddActivityForm {
     private JComboBox boxWithTypes;
     private JLabel lblType;
     private JLabel lblColor;
-    private JComboBox boxWithColor;
-    private JTextField textColorInt;
     private JButton btnSubmit;
     private JLabel lblTime;
     private JPanel panel;

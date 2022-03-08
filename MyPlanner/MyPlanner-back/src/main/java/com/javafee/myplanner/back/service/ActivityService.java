@@ -1,7 +1,8 @@
 package com.javafee.myplanner.back.service;
 
-public interface ActivityService {
-    public void addActivity();
+import com.javafee.myplanner.back.domain.Activity;
 
+public interface ActivityService {
+    void addActivity(Activity activity);
 
 }
