@@ -1,6 +1,4 @@
 package com.javafee.myplanner.back.service.impl;
-
-import com.javafee.myplanner.back.domain.User;
 import com.javafee.myplanner.back.repository.UserRepository;
 import com.javafee.myplanner.back.repository.impl.UserRepositoryImpl;
 import com.javafee.myplanner.back.service.RegisterService;

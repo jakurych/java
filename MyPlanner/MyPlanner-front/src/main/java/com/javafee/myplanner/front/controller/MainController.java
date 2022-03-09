@@ -20,6 +20,7 @@ public class MainController {
 
     private void initialize() {
         activitiesController = new ActivitiesController();
+
         mainForm = new MainForm();
         mainFormService = new MainService();
         mainForm.getFrame().setVisible(true);

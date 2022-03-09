@@ -6,6 +6,7 @@ import com.javafee.myplanner.front.view.LoginForm;
 import com.javafee.myplanner.front.view.RegisterForm;
 
 import javax.management.StringValueExp;
+import java.awt.event.ActionEvent;
 
 public class LoginController {
     private LoginForm loginForm;
@@ -49,4 +50,7 @@ public class LoginController {
     }
 
 
+    private void actionPerformed(ActionEvent e) {
+        onClickBtnLogin();
+    }
 }

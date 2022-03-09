@@ -1,8 +1,5 @@
 package com.javafee.myplanner.back.service;
 
-import com.javafee.myplanner.back.service.impl.RegisterServiceImpl;
-
-
 public interface RegisterService  {
 
     public boolean checkLogin(String rLogin);
