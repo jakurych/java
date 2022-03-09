@@ -10,15 +10,17 @@ import java.awt.*;
 public class ActivitiesController {
     private ActivitiesController activitiesController;
     private ActivitiesForm activitiesForm;
-    private AddActivityForm addActivityForm;
     private ActivitiesService activitiesService;
     private AddTypeForm addTypeForm;
+    private AddActivityForm addActivityForm;
+
 
     public void control(){
         initialize();
         activitiesForm.getBtnAddNewActivity().addActionListener(e -> onClickBtnAddActivity());
         activitiesForm.getBtnAddNewType().addActionListener(e -> onClickBtnAddNewType());
         addActivityForm.getBtnSubmit().addActionListener(e -> submitActivity());
+
         //TODO: for testing
         //addActivityForm.getColorChooser();
         addActivityForm.getColorChooser().setColor(Color.BLACK);
@@ -41,13 +43,13 @@ public class ActivitiesController {
             }
     public void submitActivity(){
         String name = addActivityForm.getTextFieldName().getText();
-        // String color = addActivityForm.getBoxWithColor().getSelectedItem().toString();
+        String description = addActivityForm.getTextFieldDescription().getText();
         Color color = addActivityForm.getColorChooser().getColor();
-
         int r = color.getRed();
         int g = color.getGreen();
         int b = color.getBlue();
         ActivityType type = (ActivityType) addActivityForm.getBoxWithTypes().getSelectedItem();
+        int defaultDuration = (Integer) addActivityForm.getSpinner1().getValue();
         //addActivityForm.getColorChooser().setColor(Color.BLACK);
 
 
@@ -58,6 +60,14 @@ public class ActivitiesController {
     private String color;
     private ActivityType activityType;
          */
+    }
+    public void submitType(){
+        String name = addTypeForm.getTextFieldName().getText();
+        Color color = addActivityForm.getColorChooser().getColor();
+        int r = color.getRed();
+        int g = color.getGreen();
+        int b = color.getBlue();
+
     }
     public void boxWithTypes(){
 

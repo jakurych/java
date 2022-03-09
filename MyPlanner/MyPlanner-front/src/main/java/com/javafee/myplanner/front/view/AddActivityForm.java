@@ -3,7 +3,6 @@ package com.javafee.myplanner.front.view;
 import lombok.Getter;
 
 import javax.swing.*;
-import java.awt.*;
 
 @Getter
 public class AddActivityForm {
@@ -18,6 +17,7 @@ public class AddActivityForm {
     private JPanel panel;
     private JSpinner spinner1;
     private JColorChooser colorChooser;
+    private JTextField textFieldDescription;
 
     public AddActivityForm() {
         frame = new JFrame("ActivitiesForm");
