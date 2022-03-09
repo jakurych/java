@@ -3,6 +3,7 @@ import com.javafee.myplanner.back.domain.ActivityType;
 import com.javafee.myplanner.front.service.ActivitiesService;
 import com.javafee.myplanner.front.view.ActivitiesForm;
 import com.javafee.myplanner.front.view.AddActivityForm;
+import com.javafee.myplanner.front.view.AddTypeForm;
 
 import java.awt.*;
 
@@ -11,10 +12,12 @@ public class ActivitiesController {
     private ActivitiesForm activitiesForm;
     private AddActivityForm addActivityForm;
     private ActivitiesService activitiesService;
+    private AddTypeForm addTypeForm;
 
     public void control(){
         initialize();
         activitiesForm.getBtnAddNewActivity().addActionListener(e -> onClickBtnAddActivity());
+        activitiesForm.getBtnAddNewType().addActionListener(e -> onClickBtnAddNewType());
         addActivityForm.getBtnSubmit().addActionListener(e -> submitActivity());
         //TODO: for testing
         //addActivityForm.getColorChooser();
@@ -24,6 +27,7 @@ public class ActivitiesController {
 
     private void initialize() {
         addActivityForm = new AddActivityForm();
+        addTypeForm = new AddTypeForm();
         activitiesForm = new ActivitiesForm();
         activitiesService = new ActivitiesService();
         activitiesForm.getFrame().setVisible(true);
@@ -32,6 +36,9 @@ public class ActivitiesController {
     public void onClickBtnAddActivity(){
         addActivityForm.getFrame().setVisible(true);
     }
+    public void onClickBtnAddNewType(){
+        addTypeForm.getFrame().setVisible(true);
+            }
     public void submitActivity(){
         String name = addActivityForm.getTextFieldName().getText();
         // String color = addActivityForm.getBoxWithColor().getSelectedItem().toString();
