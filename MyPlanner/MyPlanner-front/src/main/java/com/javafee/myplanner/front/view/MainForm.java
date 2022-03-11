@@ -1,16 +1,16 @@
 package com.javafee.myplanner.front.view;
+import com.toedter.calendar.JDateChooser;
 import lombok.Getter;
 
 import javax.swing.*;
-import java.awt.*;
 
 @Getter
 public class MainForm {
     private JFrame frame;
     private JPanel panel;
-    private JButton btnTest;
-    private JLabel lblInfo;
     private JButton btnAddEvent;
+    private JComboBox boxWithTypes;
+    private JDateChooser dateChooser;
 
     public MainForm() {
         frame = new JFrame("MainForm");
@@ -19,4 +19,9 @@ public class MainForm {
         frame.pack();
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        dateChooser = new JDateChooser();
+        dateChooser.setDateFormatString("dd.MM.yyyy");
+    }
 }

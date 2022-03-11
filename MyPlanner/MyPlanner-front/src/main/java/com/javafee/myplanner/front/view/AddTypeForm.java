@@ -17,7 +17,7 @@ public class AddTypeForm {
     public AddTypeForm() {
         frame = new JFrame("AddTypeForm");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
     }
 

@@ -16,7 +16,7 @@ public class ActivitiesForm {
     public ActivitiesForm() {
         frame = new JFrame("ActivitiesForm");
         frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
     }
 

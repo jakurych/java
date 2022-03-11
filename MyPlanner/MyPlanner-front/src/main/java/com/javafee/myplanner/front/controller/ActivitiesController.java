@@ -6,6 +6,7 @@ import com.javafee.myplanner.front.view.AddActivityForm;
 import com.javafee.myplanner.front.view.AddTypeForm;
 
 import java.awt.*;
+import java.util.Date;
 
 public class ActivitiesController {
     private ActivitiesController activitiesController;
@@ -13,6 +14,7 @@ public class ActivitiesController {
     private ActivitiesService activitiesService;
     private AddTypeForm addTypeForm;
     private AddActivityForm addActivityForm;
+    private Date date;
 
 
     public void control(){
@@ -33,7 +35,7 @@ public class ActivitiesController {
         activitiesForm = new ActivitiesForm();
         activitiesService = new ActivitiesService();
         activitiesForm.getFrame().setVisible(true);
-        boxWithTypes();
+
     }
     public void onClickBtnAddActivity(){
         addActivityForm.getFrame().setVisible(true);
@@ -51,8 +53,6 @@ public class ActivitiesController {
         ActivityType type = (ActivityType) addActivityForm.getBoxWithTypes().getSelectedItem();
         int defaultDuration = (Integer) addActivityForm.getSpinner1().getValue();
         //addActivityForm.getColorChooser().setColor(Color.BLACK);
-
-
         /*
          private String name;
     private Date dateFrom;
@@ -67,19 +67,13 @@ public class ActivitiesController {
         int r = color.getRed();
         int g = color.getGreen();
         int b = color.getBlue();
-
-    }
-    public void boxWithTypes(){
-
-
-        for (String box: activitiesService.allActivitiesTypes()
-             ) {
-            addActivityForm.getBoxWithTypes().addItem(box);
-        }
-
     }
 
 
+    public Date getDate(Date date){
+        this.date = date;
+        return date;
+    }
 
 
 }

@@ -9,6 +9,7 @@ public class ActivityType {
     private int defaultLenght;
     private int defaultDay;
 
+
     @Override
     public String toString() {
         return name;

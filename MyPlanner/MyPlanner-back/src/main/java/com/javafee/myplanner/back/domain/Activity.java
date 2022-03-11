@@ -12,7 +12,8 @@ public class Activity {
     private String name;
     private Date dateFrom;
     private Date dateTo;
-    private String color;
+    private Color color;
     private ActivityType activityType;
+    private boolean isRepeatable;
 
 }
