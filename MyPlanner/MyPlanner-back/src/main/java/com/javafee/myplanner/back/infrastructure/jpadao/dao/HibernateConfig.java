@@ -26,6 +26,10 @@ public class HibernateConfig {
     private static SessionFactory sessionFactory;
     private static Session session;
 
+    public static Session getSession() {
+        return session;
+    }
+
     static {
         try {
             Properties properties = new Properties();
@@ -33,26 +37,25 @@ public class HibernateConfig {
             properties.put(Environment.URL, "jdbc:postgresql://localhost:5432/your-planner");
             properties.put(Environment.USER, "postgres");
             properties.put(Environment.PASS, "admin123");
-            properties.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL95Dialect");
+            properties.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL9Dialect");
             properties.put(Environment.HBM2DDL_AUTO, "update");
 
             Configuration configuration = new Configuration();
             configuration.setProperties(properties);
 
-//            Reflections reflections = new Reflections("com.javafee.myplanner.back.infrastructure.jpadao.domain");
-//            Set<Class<?>> classes = reflections.getTypesAnnotatedWith(Entity.class);
+            Reflections reflections = new Reflections("com.javafee.myplanner.back.infrastructure.jpadao.domain");
+            Set<Class<?>> classes = reflections.getTypesAnnotatedWith(Entity.class);
 
-//            MetadataSources sources = new MetadataSources(registry);
-//            classes.forEach(sources::addAnnotatedClass);
+            classes.forEach(configuration::addAnnotatedClass);
+            StandardServiceRegistry registry =
+                    new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
 
-//            Metadata metadata = sources.getMetadataBuilder().build();
+            MetadataSources sources = new MetadataSources(registry);
+            classes.forEach(sources::addAnnotatedClass);
 
-            //tmp
-            configuration.addAnnotatedClass(Employee.class);
-            // classes.forEach(configuration::addAnnotatedClass);
-            StandardServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+            Metadata metadata = sources.getMetadataBuilder().build();
 
-            sessionFactory = configuration.buildSessionFactory(registry); //metadata.getSessionFactoryBuilder().build();
+            sessionFactory = metadata.getSessionFactoryBuilder().build();
             session = sessionFactory.openSession();
         } catch (Exception e) {
             log.error(e.getMessage());
