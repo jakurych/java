@@ -11,6 +11,29 @@ public class TestMain {
         DaoELibrary daoMyElibrary = new DaoELibrary();
 
         ResultSet result = null;
+        String reservations = "select c.name, c.surname, c.pesel, \n" +
+                "ll.lend_date, ll.returned_date, \n" +
+                "lv.inventory_number, \n" +
+                "lb.title, lb.isbn_number\n" +
+                "from com_user_data c\n" +
+                "join lib_client lc on c.id_user_data = lc.id_client\n" +
+                "join lib_reservation lr on lc.id_client = lr.id_client\n" +
+                "join lib_lend ll on ll.id_reservation = lr.id_reservation \n" +
+                "join lib_volume lv on ll.id_volume = lv.id_volume\n" +
+                "join lib_book lb on lb.id_book = lv.id_book \n" +
+                "where ll.is_returned = false ;; ";
+
+        result = daoMyElibrary.executeQuery(reservations);
+        try {
+            while (result.next())
+                log.info("Client: "+result.getString("name")+result.getString("surname")+result.getString(""));
+                //log.info("Reservation Data: " + result.getInt("salary") + ", " + result.getString("surname"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        ResultSet result = null;
         String actionBooks = "SELECT lb.*, lc.name FROM lib_book lb \n" +
                 "\tjoin lib_book_category lbc on lb.id_book = lbc.id_book\n" +
                 "\tjoin lib_category lc on lc.id_category = lbc.id_category\n" +
@@ -24,6 +47,8 @@ public class TestMain {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
+
 
         // Query 1 =====================================================================================================
         /*result = daoMyElibrary.executeQuery(actionBooks);
