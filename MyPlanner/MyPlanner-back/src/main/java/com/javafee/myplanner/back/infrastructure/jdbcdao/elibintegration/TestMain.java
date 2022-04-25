@@ -21,12 +21,14 @@ public class TestMain {
                 "join lib_lend ll on ll.id_reservation = lr.id_reservation \n" +
                 "join lib_volume lv on ll.id_volume = lv.id_volume\n" +
                 "join lib_book lb on lb.id_book = lv.id_book \n" +
-                "where ll.is_returned = false ;; ";
+                "where ll.is_returned = false;";
 
         result = daoMyElibrary.executeQuery(reservations);
         try {
             while (result.next())
-                log.info("Client: "+result.getString("name")+result.getString("surname")+result.getString(""));
+                log.info("Client: "+result.getString("name")+result.getString("surname")+result.getString("pesel")+result.getString("lend_date")+
+                        result.getString("returned_date")+result.getString("inventory_number")+
+                        result.getString("title")+result.getString("isbn_number"));
                 //log.info("Reservation Data: " + result.getInt("salary") + ", " + result.getString("surname"));
         } catch (SQLException e) {
             e.printStackTrace();
